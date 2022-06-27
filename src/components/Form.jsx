@@ -22,4 +22,19 @@ class Form extends React.Component {
   }
 }
 
+PlanetCard.propTypes = {
+  cardName: propTypes.string.isRequired,
+  cardDescription: propTypes.string.isRequired,
+  cartAttr1: propTypes.string.isRequired,
+  cartAttr2: propTypes.string.isRequired,
+  cartAttr3: propTypes.string.isRequired,
+  cardImage: propTypes.string.isRequired,
+  cardRare: propTypes.string.isRequired,
+  cardTrunfo: propTypes.boolean.isRequired,
+  hasTrunfo: propTypes.boolean.isRequired,
+  isSaveButtonDisabled: propTypes.boolean.isRequired,
+  onInputChange: propTypes.callback.isRequired,
+  onSaveButtonClick: propTypes.calback.isRequired, // callback ou function ?
+};
+
 export default Form;
