@@ -1,3 +1,4 @@
+import { toHaveFormValues } from '@testing-library/jest-dom/dist/matchers';
 import React from 'react';
 
 class Form extends React.Component {
@@ -22,7 +23,7 @@ class Form extends React.Component {
   }
 }
 
-PlanetCard.propTypes = {
+toHaveFormValues.propTypes = {
   cardName: propTypes.string.isRequired,
   cardDescription: propTypes.string.isRequired,
   cartAttr1: propTypes.string.isRequired,
@@ -30,11 +31,11 @@ PlanetCard.propTypes = {
   cartAttr3: propTypes.string.isRequired,
   cardImage: propTypes.string.isRequired,
   cardRare: propTypes.string.isRequired,
-  cardTrunfo: propTypes.boolean.isRequired,
-  hasTrunfo: propTypes.boolean.isRequired,
-  isSaveButtonDisabled: propTypes.boolean.isRequired,
-  onInputChange: propTypes.callback.isRequired,
-  onSaveButtonClick: propTypes.calback.isRequired, // callback ou function ?
+  cardTrunfo: propTypes.bool.isRequired,
+  hasTrunfo: propTypes.bool.isRequired,
+  isSaveButtonDisabled: propTypes.bool.isRequired,
+  onInputChange: propTypes.func.isRequired,
+  onSaveButtonClick: propTypes.func.isRequired,
 };
 
 export default Form;
