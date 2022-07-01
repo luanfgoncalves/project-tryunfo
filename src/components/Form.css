@@ -1,0 +1,72 @@
+form {
+    height: 600px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: azure;
+    border: 2px solid #d3cfff;
+    color: rgb(0, 60, 112);
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0 5% 0 5%;
+    color: rgb(0, 60, 112);
+}
+
+p {
+    color: rgb(0, 60, 112);
+}
+
+#name-input {
+    height: 25px;
+    width: 300px;
+}
+
+#description-input {
+    height: 65px;
+    width: 300px;
+    resize: none;
+}
+
+#attr1-input {
+    height: 25px;
+    width: 250px;
+}
+
+#attr2-input {
+    height: 25px;
+    width: 250px;
+}
+
+#attr3-input {
+    height: 25px;
+    width: 250px;
+}
+
+#image-input {
+    height: 25px;
+    width: 250px;
+}
+
+#rare-input {
+    height: 30px;
+    width: 257px;
+}
+
+#trunfo-input {
+    width: 30px;
+}
+
+#save-button {
+    height: 25px;
+    width: 150px;
+    color: white;
+    background-color: rgb(1, 131, 131);
+    margin-bottom: 5%;
+}
