@@ -21,7 +21,7 @@ class App extends React.Component {
     };
   }
 
-// onInputChange();
+  // onInputChange();
 
   render() {
     const {
@@ -35,11 +35,12 @@ class App extends React.Component {
       cardTrunfo,
       // hasTrunfo,
       isSaveButtonDisabled,
-      onInputChange,
+      // onInputChange,
       onSaveButtonClick,
     } = this.state;
+
     return (
-      <div>
+      <main>
         <h1>Tryunfo</h1>
         <Form
           cardName={ cardName }
@@ -56,7 +57,7 @@ class App extends React.Component {
           onSaveButtonClick={ onSaveButtonClick }
         />
         {/* <Card /> */}
-      </div>
+      </main>
     );
   }
 }
