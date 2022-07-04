@@ -14,20 +14,28 @@ class App extends React.Component {
       cardAttr3State: '', // atributo 3(resiliencia)
       cardImageState: '', // figura da carta
       cardRareState: '', // raridade da carta
-      cardTrunfoState: 'false', // trunfo da carta
-      // hasTrunfoState: 'false', indicador se a carta tem ou não um trunfo
-      SaveButtonState: false, // estado da validação do btn Save(se pode ou não salvar)
-      // onSaveButtonClickState: () => {},
+      cardTrunfoState: false, // trunfo da carta
+      SaveButtonState: true, // estado da validação do btn Save(se pode ou não salvar)
     };
   }
 
-  // estado inicial, para retornar a página ás configurações iniciais
-  originalState =() => {
-
+  // constante com o estado original para a redefinição do formulário após uso
+  originalState = () => {
+    this.setState({
+      cardNameState: '', // Nome da carta definido pelo form
+      cardDescriptionState: '', // Descrição da carta definida pelo form
+      cardAttr1State: '', // atributo 1(força)
+      cardAttr2State: '', // atributo 2(agilidade)
+      cardAttr3State: '', // atributo 3(resiliencia)
+      cardImageState: '', // figura da carta
+      cardRareState: '', // raridade da carta
+      cardTrunfoState: false, // trunfo da carta
+      SaveButtonState: true, // estado da validação do btn Save(se pode ou não salvar)
+    });
   }
 
   // validador do botão de salvar, pra garantir que a carta só será salva se estiver dentro das especificações
-  onSaveButtonClick = () => {
+  saveButtonManager = () => {
     const { cardNameState, cardDescriptionState, cardRareState,
       cardAttr1State, cardAttr2State, cardAttr3State, cardImageState } = this.state;
 
@@ -58,14 +66,14 @@ class App extends React.Component {
         && attrSum) });
   }
 
-  // controle de checkbox
+  // controle de checkbox e habilitação do botão de salvar
   onInputChange = (event) => {
     const { target } = event;
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState(({
       [name]: value,
-    }), () => this.onSaveButtonClick());
+    }), () => this.saveButtonManager());
   };
 
   render() {
@@ -77,11 +85,8 @@ class App extends React.Component {
       cardAttr3State,
       cardImageState,
       cardRareState,
-      cardTrunfoState, // sem uso ainda
-      // hasTrunfoState, sem uso ainda
+      cardTrunfoState,
       SaveButtonState,
-      // onInputChangeState,
-      onSaveButtonClickState,
     } = this.state;
 
     return (
@@ -95,11 +100,11 @@ class App extends React.Component {
           cardAttr3={ cardAttr3State }
           cardImage={ cardImageState }
           cardRare={ cardRareState }
-          cardTrunfo={ cardTrunfoState } // sem uso ainda
+          cardTrunfo={ cardTrunfoState }
           // hasTrunfo={ hasTrunfoState } sem uso ainda
           isSaveButtonDisabled={ SaveButtonState }
-          onInputChange={ this.onInputChangeState }
-          onSaveButtonClick={ onSaveButtonClickState }
+          onInputChange={ this.onInputChange }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           cardName={ cardNameState }
