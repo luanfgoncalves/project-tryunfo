@@ -11,32 +11,59 @@ class Card extends React.Component {
       cardAttr3,
       cardImage,
       cardRare,
-      cardTrunfo,
+      cardTrunfo, // bool
     } = this.props;
     return (
-      <div>
+      <section>
         <div>
-          <div data-testid="name-card">{ cardName }</div>
-          <div data-testid="image-card">{ cardImage }</div>
-          <div data-testid="rare-card">{ cardTrunfo }</div>
-          <div data-testid="description-card">{ cardDescription }</div>
+          <h2 data-testid="name-card">
+            Nome:
+            {' '}
+            { cardName }
+          </h2>
+
+          <img data-testid="image-card" scr={ cardImage } alt="Imagem da carta" />
+
+          <div data-testid="rare-card">
+            Super Trunfo!
+            {' '}
+            { cardTrunfo }
+          </div>
+
+          <div data-testid="description-card">
+            Descrição:
+            {' '}
+            { cardDescription }
+          </div>
+
           <div data-testid="rare-card">{ cardRare }</div>
+
           <div>
-            <div>
-              <div>{ cardAttr1 }</div>
-              <div>VALOR-1</div>
+            <div data-testid="attr1-card">
+              Attr1:
+              { cardAttr1 }
             </div>
-            <div>
-              <div>{ cardAttr2 }</div>
-              <div>VALOR-2</div>
+
+            <div data-testid="attr2-card">
+              Attr2:
+              { cardAttr2 }
             </div>
-            <div>
-              <div>{ cardAttr3 }</div>
-              <div>VALOR-3</div>
+
+            <div data-testid="attr3-card">
+              Attr3:
+              { cardAttr3 }
             </div>
           </div>
+
+          <div data-testid="rare-card">
+            { cardRare }
+          </div>
+
+          {cardTrunfo === true ? <div data-testid="trunfo-card">Super Trunfo</div> : ''}
+          {/* if cardTrunfo === true{<div>Super Trunfo</div>} else <div>''</div> */}
+
         </div>
-      </div>
+      </section>
     );
   }
 }

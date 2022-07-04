@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import './Form.css';
+import '../Styles/Form.css';
 
 class Form extends React.Component {
   render() {
@@ -18,9 +18,9 @@ class Form extends React.Component {
       onInputChange,
       onSaveButtonClick,
     } = this.props;
+
     return (
       <form>
-
         <h2>Adicionar nova carta</h2>
 
         <label htmlFor="name-input">
@@ -137,7 +137,6 @@ class Form extends React.Component {
         >
           Salvar
         </button>
-
       </form>
     );
   }
