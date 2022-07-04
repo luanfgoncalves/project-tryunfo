@@ -21,7 +21,15 @@ class App extends React.Component {
     };
   }
 
-  // onInputChange();
+  // controle de checkbox
+  onInputChange = (event) => {
+    const { target } = event;
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({
+      [name]: value,
+    });
+  }
 
   render() {
     const {
@@ -56,7 +64,16 @@ class App extends React.Component {
           onInputChange={ this.onInputChangeState }
           onSaveButtonClick={ onSaveButtonClickState }
         />
-        <Card />
+        <Card
+          cardName={ cardNameState }
+          cardDescription={ cardDescriptionState }
+          cardAttr1={ cardAttr1State }
+          cardAttr2={ cardAttr2State }
+          cardAttr3={ cardAttr3State }
+          cardImage={ cardImageState }
+          cardRare={ cardRareState }
+          cardTrunfo={ cardTrunfoState }
+        />
       </main>
     );
   }
@@ -66,3 +83,4 @@ export default App;
 
 // Referêcias:
 // https://www.codegrepper.com/code-examples/javascript/oninputchange+react
+// https://pt-br.reactjs.org/docs/handling-events.html

@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import '../Styles/Card.css';
 
 class Card extends React.Component {
@@ -70,14 +70,14 @@ class Card extends React.Component {
 }
 
 Card.propTypes = {
-  cardName: propTypes.string.isRequired,
-  cardDescription: propTypes.string.isRequired,
-  cardAttr1: propTypes.string.isRequired,
-  cardAttr2: propTypes.string.isRequired,
-  cardAttr3: propTypes.string.isRequired,
-  cardImage: propTypes.string.isRequired,
-  cardRare: propTypes.string.isRequired,
-  cardTrunfo: propTypes.bool.isRequired,
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
 };
 
 export default Card;
