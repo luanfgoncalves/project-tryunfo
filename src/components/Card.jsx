@@ -19,21 +19,18 @@ class Card extends React.Component {
         <div>
           <h2 data-testid="name-card">
             Nome:
-            {' '}
             { cardName }
           </h2>
 
-          <img data-testid="image-card" scr={ cardImage } alt="Imagem da carta" />
+          <img data-testid="image-card" scr={ cardImage } alt={ cardName } />
 
           <div data-testid="rare-card">
-            Super Trunfo!
-            {' '}
+            Raridade:
             { cardTrunfo }
           </div>
 
           <div data-testid="description-card">
             Descrição:
-            {' '}
             { cardDescription }
           </div>
 

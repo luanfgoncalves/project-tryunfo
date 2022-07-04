@@ -16,9 +16,40 @@ class App extends React.Component {
       cardRareState: '',
       cardTrunfoState: 'false', // boll
       // hasTrunfoState: 'false',
-      isSaveButtonDisabledState: () => {},
+      SaveButtonState: false,
       onSaveButtonClickState: () => {},
     };
+  }
+
+  onSaveButtonClick = () => {
+    const { cardNameState, cardDescriptionState, cardRareState,
+      cardAttr1State, cardAttr2State, cardAttr3State, cardImageState } = this.state;
+
+    const cardNameVar = cardNameState !== ''
+    && cardDescriptionState !== ''
+    && cardRareState !== '' && cardImageState !== '';
+
+    const maxAtributeValue = 90;
+    const maxAtributeSum = 210;
+    const atribute1Value = Number(cardAttr1State) >= 0
+    && Number(cardAttr1State) <= maxAtributeValue;
+
+    const atribute2Value = Number(cardAttr2State) >= 0
+    && Number(cardAttr2State) <= maxAtributeValue;
+
+    const atribute3Value = Number(cardAttr3State) >= 0
+    && Number(cardAttr3State) <= maxAtributeValue;
+
+    const attrSum = Number(cardAttr1State)
+    + Number(cardAttr2State)
+    + Number(cardAttr3State) <= maxAtributeSum;
+
+    this.setState({
+      SaveButtonState: !(cardNameVar
+        && atribute1Value
+        && atribute2Value
+        && atribute3Value
+        && attrSum) });
   }
 
   // controle de checkbox
@@ -26,10 +57,10 @@ class App extends React.Component {
     const { target } = event;
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({
+    this.setState(({
       [name]: value,
-    });
-  }
+    }), () => this.onSaveButtonClick());
+  };
 
   render() {
     const {
@@ -42,7 +73,7 @@ class App extends React.Component {
       cardRareState,
       cardTrunfoState,
       // hasTrunfoState,
-      isSaveButtonDisabledState,
+      SaveButtonState,
       // onInputChangeState,
       onSaveButtonClickState,
     } = this.state;
@@ -60,7 +91,7 @@ class App extends React.Component {
           cardRare={ cardRareState }
           cardTrunfo={ cardTrunfoState }
           hasTrunfo={ hasTrunfoState }
-          isSaveButtonDisabled={ isSaveButtonDisabledState }
+          isSaveButtonDisabled={ SaveButtonState }
           onInputChange={ this.onInputChangeState }
           onSaveButtonClick={ onSaveButtonClickState }
         />
