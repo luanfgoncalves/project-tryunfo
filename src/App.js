@@ -7,20 +7,26 @@ class App extends React.Component {
     super();
 
     this.state = {
-      cardNameState: '',
-      cardDescriptionState: '',
-      cardAttr1State: '',
-      cardAttr2State: '',
-      cardAttr3State: '',
-      cardImageState: '',
-      cardRareState: '',
-      cardTrunfoState: 'false', // boll
-      // hasTrunfoState: 'false',
-      SaveButtonState: false,
-      onSaveButtonClickState: () => {},
+      cardNameState: '', // Nome da carta definido pelo form
+      cardDescriptionState: '', // Descrição da carta definida pelo form
+      cardAttr1State: '', // atributo 1(força)
+      cardAttr2State: '', // atributo 2(agilidade)
+      cardAttr3State: '', // atributo 3(resiliencia)
+      cardImageState: '', // figura da carta
+      cardRareState: '', // raridade da carta
+      cardTrunfoState: 'false', // trunfo da carta
+      // hasTrunfoState: 'false', indicador se a carta tem ou não um trunfo
+      SaveButtonState: false, // estado da validação do btn Save(se pode ou não salvar)
+      // onSaveButtonClickState: () => {},
     };
   }
 
+  // estado inicial, para retornar a página ás configurações iniciais
+  originalState =() => {
+
+  }
+
+  // validador do botão de salvar, pra garantir que a carta só será salva se estiver dentro das especificações
   onSaveButtonClick = () => {
     const { cardNameState, cardDescriptionState, cardRareState,
       cardAttr1State, cardAttr2State, cardAttr3State, cardImageState } = this.state;
@@ -71,8 +77,8 @@ class App extends React.Component {
       cardAttr3State,
       cardImageState,
       cardRareState,
-      cardTrunfoState,
-      // hasTrunfoState,
+      cardTrunfoState, // sem uso ainda
+      // hasTrunfoState, sem uso ainda
       SaveButtonState,
       // onInputChangeState,
       onSaveButtonClickState,
@@ -89,8 +95,8 @@ class App extends React.Component {
           cardAttr3={ cardAttr3State }
           cardImage={ cardImageState }
           cardRare={ cardRareState }
-          cardTrunfo={ cardTrunfoState }
-          hasTrunfo={ hasTrunfoState }
+          cardTrunfo={ cardTrunfoState } // sem uso ainda
+          // hasTrunfo={ hasTrunfoState } sem uso ainda
           isSaveButtonDisabled={ SaveButtonState }
           onInputChange={ this.onInputChangeState }
           onSaveButtonClick={ onSaveButtonClickState }
@@ -103,7 +109,7 @@ class App extends React.Component {
           cardAttr3={ cardAttr3State }
           cardImage={ cardImageState }
           cardRare={ cardRareState }
-          cardTrunfo={ cardTrunfoState }
+          // cardTrunfo={ cardTrunfoState }
         />
       </main>
     );
