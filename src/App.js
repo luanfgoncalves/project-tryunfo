@@ -16,6 +16,7 @@ class App extends React.Component {
       cardRareState: '', // raridade da carta
       cardTrunfoState: false, // trunfo da carta
       SaveButtonState: true, // estado da validação do btn Save(se pode ou não salvar)
+      cardData: [], // array que guarda os dados das cartas p/ geração
     };
   }
 
@@ -76,6 +77,33 @@ class App extends React.Component {
     }), () => this.saveButtonManager());
   };
 
+  onSaveButtonClick = () => {
+    const { cardNameState,
+      cardDescriptionState,
+      cardAttr1State,
+      cardAttr2State,
+      cardAttr3State,
+      cardImageState,
+      cardRareState,
+      cardTrunfoState,
+      cardData,
+    } = this.state;
+
+    const card = {
+      cardNameState,
+      cardDescriptionState,
+      cardAttr1State,
+      cardAttr2State,
+      cardAttr3State,
+      cardImageState,
+      cardRareState,
+      cardTrunfoState,
+    };
+    this.setState({
+      cardData: [...cardData, card],
+    }, this.inputsInitial);
+  };
+
   render() {
     const {
       cardNameState,
@@ -116,6 +144,8 @@ class App extends React.Component {
           cardRare={ cardRareState }
           // cardTrunfo={ cardTrunfoState }
         />
+        <h3>Cartas:</h3>
+        <p>cartas disponiveis ficaram aqui</p>
       </main>
     );
   }

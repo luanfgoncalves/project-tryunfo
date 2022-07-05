@@ -24,7 +24,7 @@ class Form extends React.Component {
         <h2>Adicionar nova carta</h2>
 
         <label htmlFor="name-input">
-          <p>Nome</p>
+          <p>Nome:</p>
           <input
             placeholder="Nome da carta"
             name="cardName"
@@ -37,7 +37,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="description-input">
-          <p>Descrição</p>
+          <p>Descrição:</p>
           <textarea
             placeholder="Descrição da carta"
             name="cardDescription"
@@ -50,7 +50,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="attr1-input">
-          Attr01
+          Attr01:
           <input
             placeholder="Primeiro atributo"
             name="cardAttr1"
@@ -63,7 +63,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="attr2-input">
-          Attr02
+          Attr02:
           <input
             placeholder="Segundo atributo"
             name="cardAttr2"
@@ -76,7 +76,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="attr3-input">
-          Attr03
+          Attr03:
           <input
             placeholder="Terceiro atributo"
             name="cardAttr3"
@@ -89,7 +89,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="image-input">
-          Imagem
+          Imagem:
           <input
             placeholder="imagem da carta"
             name="cardImage"
@@ -102,7 +102,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="rare-input">
-          <p>Raridade</p>
+          <p>Raridade:</p>
           <select
             id="rare-input"
             data-testid="rare-input"
@@ -116,7 +116,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="trunfo-input">
-          Super Trybe Trunfo
+          Super Trybe Trunfo:
           <input
             placeholder="Trunfo"
             name="cardTrunfo"
