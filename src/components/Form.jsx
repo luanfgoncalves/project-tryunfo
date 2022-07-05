@@ -132,7 +132,7 @@ class Form extends React.Component {
           />
         </label>
 
-        { this.trunfo() }
+        {/* { this.trunfo() } */}
 
         <button
           id="save-button"

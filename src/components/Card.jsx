@@ -23,11 +23,6 @@ class Card extends React.Component {
 
           <img data-testid="image-card" src={ cardImage } alt={ cardName } />
 
-          {/* <div data-testid="rare-card">
-            Raridade:
-            { cardTrunfo }
-          </div> */}
-
           <div data-testid="description-card">
             Descrição:
             { cardDescription }
@@ -56,7 +51,6 @@ class Card extends React.Component {
 
           <div>
             {cardTrunfo === true ? <div data-testid="trunfo-card">Super Trunfo</div> : ''}
-            {/* if cardTrunfo === true{<div>Super Trunfo</div>} else <div>''</div> */}
           </div>
 
         </div>
