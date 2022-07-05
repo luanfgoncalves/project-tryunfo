@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+// import DeleteButton from './components/DeleteButton';
 
 class App extends React.Component {
   constructor() {
@@ -106,6 +107,8 @@ class App extends React.Component {
     }), () => this.saveButtonManager());
   };
 
+  deleteCard = () => {}
+
   render() {
     const {
       cardName,
@@ -118,6 +121,7 @@ class App extends React.Component {
       saveButton,
       cardImage,
       hasTrunfo,
+      cardData,
     } = this.state;
 
     return (
@@ -152,6 +156,22 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           cardImage={ cardImage }
         />
+
+        <p>Seu Deck: </p>
+
+        { cardData.map((element) => (
+          <Card
+            key={ element.cardName }
+            cardName={ element.cardName }
+            cardDescription={ element.cardDescription }
+            cardAttr1={ element.cardAttr1 }
+            cardAttr2={ element.cardAttr2 }
+            cardAttr3={ element.cardAttr3 }
+            cardRare={ element.cardRare }
+            cardTrunfo={ element.cardTrunfo }
+            cardImage={ element.cardImage }
+          />
+        ))}
 
       </main>
     );
