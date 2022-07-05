@@ -14,6 +14,7 @@ class App extends React.Component {
       cardAttr3State: '', // atributo 3(resiliencia)
       cardImageState: '', // figura da carta
       cardRareState: '', // raridade da carta
+      hasTrunfoState: false,
       cardTrunfoState: false, // trunfo da carta
       SaveButtonState: true, // estado da validação do btn Save(se pode ou não salvar)
       cardData: [], // array que guarda os dados das cartas p/ geração
@@ -37,8 +38,14 @@ class App extends React.Component {
 
   // validador do botão de salvar, pra garantir que a carta só será salva se estiver dentro das especificações
   saveButtonManager = () => {
-    const { cardNameState, cardDescriptionState, cardRareState,
-      cardAttr1State, cardAttr2State, cardAttr3State, cardImageState } = this.state;
+    const { cardNameState,
+      cardDescriptionState,
+      cardAttr1State,
+      cardAttr2State,
+      cardAttr3State,
+      cardImageState,
+      cardRareState,
+    } = this.state;
 
     const cardNameVar = cardNameState !== ''
     && cardDescriptionState !== ''
@@ -78,15 +85,8 @@ class App extends React.Component {
   };
 
   onSaveButtonClick = () => {
-    const { cardNameState,
-      cardDescriptionState,
-      cardAttr1State,
-      cardAttr2State,
-      cardAttr3State,
-      cardImageState,
-      cardRareState,
-      cardTrunfoState,
-      cardData,
+    const { cardNameState, cardDescriptionState, cardAttr1State, cardAttr2State,
+      cardAttr3State, cardImageState, cardRareState, cardTrunfoState, cardData,
     } = this.state;
 
     const card = {
@@ -101,7 +101,8 @@ class App extends React.Component {
     };
     this.setState({
       cardData: [...cardData, card],
-    }, this.inputsInitial);
+      hasTrunfoState: card.cardTrunfoState,
+    }, this.originalState);
   };
 
   render() {
@@ -113,6 +114,7 @@ class App extends React.Component {
       cardAttr3State,
       cardImageState,
       cardRareState,
+      hasTrunfoState,
       cardTrunfoState,
       SaveButtonState,
     } = this.state;
@@ -129,7 +131,7 @@ class App extends React.Component {
           cardImage={ cardImageState }
           cardRare={ cardRareState }
           cardTrunfo={ cardTrunfoState }
-          // hasTrunfo={ hasTrunfoState } sem uso ainda
+          hasTrunfo={ hasTrunfoState }
           isSaveButtonDisabled={ SaveButtonState }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
@@ -142,10 +144,22 @@ class App extends React.Component {
           cardAttr3={ cardAttr3State }
           cardImage={ cardImageState }
           cardRare={ cardRareState }
-          // cardTrunfo={ cardTrunfoState }
+          cardTrunfo={ cardTrunfoState }
         />
         <h3>Cartas:</h3>
         <p>cartas disponiveis ficaram aqui</p>
+        {/* { cards.map((card) => (
+          <Card
+            cardName={ cardNameState }
+            cardDescription={ cardDescriptionState }
+            cardAttr1={ cardAttr1State }
+            cardAttr2={ cardAttr2State }
+            cardAttr3={ cardAttr3State }
+            cardImage={ cardImageState }
+            cardRare={ cardRareState }
+            cardTrunfo={ cardTrunfoState }
+          />
+        ))} */}
       </main>
     );
   }

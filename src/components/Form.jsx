@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import '../Styles/Form.css';
 
 class Form extends React.Component {
+  // trunfo = () => {
+  //   const { cardTrunfo, hasTrunfo, onInputChange } = this.props;
+  // }
   render() {
     const {
       cardName,
