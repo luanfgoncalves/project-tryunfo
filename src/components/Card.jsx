@@ -21,19 +21,17 @@ class Card extends React.Component {
             { cardName }
           </h2>
 
-          <img data-testid="image-card" scr={ cardImage } alt={ cardName } />
+          <img data-testid="image-card" src={ cardImage } alt={ cardName } />
 
-          <div data-testid="rare-card">
+          {/* <div data-testid="rare-card">
             Raridade:
             { cardTrunfo }
-          </div>
+          </div> */}
 
           <div data-testid="description-card">
             Descrição:
             { cardDescription }
           </div>
-
-          <div data-testid="rare-card">{ cardRare }</div>
 
           <div>
             <div data-testid="attr1-card">

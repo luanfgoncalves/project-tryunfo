@@ -6,6 +6,7 @@ class Form extends React.Component {
   // trunfo = () => {
   //   const { cardTrunfo, hasTrunfo, onInputChange } = this.props;
   // }
+
   render() {
     const {
       cardName,
@@ -131,6 +132,8 @@ class Form extends React.Component {
           />
         </label>
 
+        { this.trunfo() }
+
         <button
           id="save-button"
           type="submit"
@@ -154,7 +157,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
