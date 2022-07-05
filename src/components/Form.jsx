@@ -16,7 +16,7 @@ class Form extends React.Component {
       cardAttr3,
       cardImage,
       cardRare,
-      // cardTrunfo,
+      cardTrunfo,
       // hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
@@ -119,7 +119,7 @@ class Form extends React.Component {
           </select>
         </label>
 
-        {/* <label htmlFor="trunfo-input">
+        <label htmlFor="trunfo-input">
           Super Trybe Trunfo:
           <input
             placeholder="Trunfo"
@@ -130,7 +130,7 @@ class Form extends React.Component {
             checked={ cardTrunfo }
             onChange={ onInputChange }
           />
-        </label> */}
+        </label>
 
         {/* { this.trunfo() } */}
 
