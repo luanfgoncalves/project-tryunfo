@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class SuperTrunfo extends React.Component {
+class SuperTrunfo extends React.Component {
   render() {
     const { hasTrunfo, cardTrunfo, onInputChange } = this.props;
     if (!hasTrunfo) {
@@ -24,7 +24,9 @@ export default class SuperTrunfo extends React.Component {
 }
 
 SuperTrunfo.propTypes = {
-  hasTrunfo: propTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
 };
+
+export default SuperTrunfo;

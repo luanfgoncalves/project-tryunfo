@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../Styles/Form.css';
+import SuperTrunfo from './SuperTrunfo';
 
 class Form extends React.Component {
-  // trunfo = () => {
-  //   const { cardTrunfo, hasTrunfo, onInputChange } = this.props;
-  // }
-
   render() {
     const {
       cardName,
@@ -17,7 +14,7 @@ class Form extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -119,7 +116,7 @@ class Form extends React.Component {
           </select>
         </label>
 
-        <label htmlFor="trunfo-input">
+        {/* <label htmlFor="trunfo-input">
           Super Trybe Trunfo:
           <input
             placeholder="Trunfo"
@@ -130,9 +127,13 @@ class Form extends React.Component {
             checked={ cardTrunfo }
             onChange={ onInputChange }
           />
-        </label>
+        </label> */}
 
-        {/* { this.trunfo() } */}
+        <SuperTrunfo
+          hasTrunfo={ hasTrunfo }
+          cardTrunfo={ cardTrunfo }
+          onInputChange={ onInputChange }
+        />
 
         <button
           id="save-button"
@@ -172,7 +173,7 @@ Form.propTypes = ({
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
   cardTrunfo: PropTypes.bool,
-  // hasTrunfo: PropTypes.bool,
+  hasTrunfo: PropTypes.bool,
   isSaveButtonDisabled: PropTypes.bool,
   onInputChange: PropTypes.func,
   onSaveButtonClick: PropTypes.func,
