@@ -15,6 +15,8 @@ class App extends React.Component {
       cardRare: 'normal',
       cardTrunfo: false,
       saveButton: true,
+      cardImage: '',
+      cardData: [],
     };
   }
 
@@ -23,14 +25,13 @@ class App extends React.Component {
       this.setState({
         cardName: '',
         cardDescription: '',
-        cardAttr1: 0, // atributo 1(força)
-        cardAttr2: 0, // atributo 2(agilidade)
-        cardAttr3: 0, // atributo 3(resiliencia)
-        cardImage: '',
+        cardAttr1: '0', // atributo 1(força)
+        cardAttr2: '0', // atributo 2(agilidade)
+        cardAttr3: '0', // atributo 3(resiliencia)
         cardRare: 'normal',
         cardTrunfo: false,
         saveButton: true,
-        cardData: [], // array que contem as cartas geradas após o salvamento
+        cardImage: '',
       });
     }
 
@@ -114,6 +115,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       saveButton,
+      cardImage,
     } = this.state;
 
     return (
@@ -131,6 +133,8 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ saveButton }
+          onSaveButtonClick={ this.onSaveButtonClick }
+          cardImage={ cardImage }
         />
 
         <p>Sua carta: </p>
@@ -143,6 +147,7 @@ class App extends React.Component {
           cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+          cardImage={ cardImage }
         />
 
       </main>
