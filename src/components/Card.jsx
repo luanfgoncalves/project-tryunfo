@@ -56,8 +56,10 @@ class Card extends React.Component {
             { cardRare }
           </div>
 
-          {cardTrunfo === true ? <div data-testid="trunfo-card">Super Trunfo</div> : ''}
-          {/* if cardTrunfo === true{<div>Super Trunfo</div>} else <div>''</div> */}
+          <div>
+            {cardTrunfo === true ? <div data-testid="trunfo-card">Super Trunfo</div> : ''}
+            {/* if cardTrunfo === true{<div>Super Trunfo</div>} else <div>''</div> */}
+          </div>
 
         </div>
       </section>
