@@ -18,6 +18,44 @@ class App extends React.Component {
     };
   }
 
+    // Função retorna o State a sua condição original
+    resetState = () => {
+      this.setState({
+        cardName: '',
+        cardDescription: '',
+        cardAttr1: 0, // atributo 1(força)
+        cardAttr2: 0, // atributo 2(agilidade)
+        cardAttr3: 0, // atributo 3(resiliencia)
+        cardImage: '',
+        cardRare: 'normal',
+        cardTrunfo: false,
+        saveButton: true,
+        cardData: [], // array que contem as cartas geradas após o salvamento
+      });
+    }
+
+    onSaveButtonClick = () => {
+      const { cardName, cardDescription, cardAttr1, cardAttr2,
+        cardAttr3, cardImage, cardRare, cardTrunfo, cardData,
+      } = this.state;
+
+      const cardSpec = {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+        cardRare,
+        cardTrunfo,
+      };
+
+      this.setState({
+        cardData: [...cardData, cardSpec],
+        // hasTrunfoState: cardSpec.cardTrunfoState,
+      }, this.resetState);
+    };
+
   saveButtonManager = () => {
     const { cardName,
       cardDescription,
@@ -30,7 +68,8 @@ class App extends React.Component {
 
     const cardNameVar = cardName !== ''
     && cardDescription !== ''
-    && cardRare !== '' && cardImage !== '';
+    && cardRare !== ''
+    && cardImage !== '';
 
     const maxAtributeValue = 90;
     const maxAtributeSum = 210;
@@ -93,6 +132,8 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ saveButton }
         />
+
+        <p>Sua carta: </p>
 
         <Card
           cardName={ cardName }
